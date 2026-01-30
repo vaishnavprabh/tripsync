@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    background-color: #170d27;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 300px;
+}
+.navleft{
+    background-color: #170d27;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.navleft img{
+    height: 100%;
+
+}
+.navright{
+    background-color: #170d27;
+    height: 50px;
+    width: 500px;
+    border-radius: 45px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+.navright button{
+    height: 40px;
+    width: 100px;
+    border-radius: 45px;
+}
+

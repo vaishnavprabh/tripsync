@@ -1,0 +1,112 @@
+/* ========== DASHBOARD WRAPPER ========== */
+.dashboard {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #f7f9fc;
+}
+
+/* ========== HEADER ========== */
+.dash-head {
+  width: 100%;
+  background: #2c3e50;
+  padding: 20px;
+  text-align: center;
+}
+
+.admin-head {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ========== MAIN DASHBOARD LAYOUT ========== */
+.dash-container {
+  display: flex;
+  height: 100%;
+}
+
+/* ========== LEFT SIDEBAR ========== */
+.left-db {
+  width: 250px;
+  background: #34495e;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+}
+
+.left-db button {
+  padding: 12px 10px;
+  font-size: 16px;
+  border: none;
+  background: #1abc9c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.left-db button:hover {
+  background: #16a085;
+}
+
+/* ========== RIGHT SIDE CONTENT ========== */
+.right-db {
+  flex: 1;
+  padding: 30px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.right-db h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* ========== TABLE STYLING ========== */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.styled-table thead tr {
+  background-color: #1abc9c;
+  color: white;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e8f8f5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .dash-container {
+    flex-direction: column;
+  }
+  .left-db {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
