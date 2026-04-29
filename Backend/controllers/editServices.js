@@ -3,12 +3,26 @@ import db from "../config/db.js";
 export const updateUser = (req, res) => {
     const { id } = req.params;
     const { username, email, number, password, role, status } = req.body;
+    const currentUser = req.user; // From authentication middleware
     
     console.log("Updating user:", id, req.body);
 
     // Validate user ID
     if (!id || isNaN(id)) {
         return res.status(400).json({ error: "Invalid user ID" });
+    }
+
+    // Authorization check: Users can only update themselves unless they are admin
+    // Admin can update anyone and change role/status
+    if (currentUser.role !== 'admin') {
+        // Non-admin users can only update themselves
+        if (parseInt(id) !== currentUser.id) {
+            return res.status(403).json({ error: "You can only update your own profile" });
+        }
+        // Non-admin users cannot change role or status
+        if (role || status) {
+            return res.status(403).json({ error: "You do not have permission to change role or status" });
+        }
     }
 
     // If email is being updated, check if it already exists for another user

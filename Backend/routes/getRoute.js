@@ -1,10 +1,12 @@
 import express from 'express'
 import { getAllUsers} from '../controllers/getServices.js'
+import { requireAdmin } from '../middleware/auth.js'
 
 
 const router= express.Router()
 
-router.get('/getAllUsers', getAllUsers)
+// Admin only route
+router.get('/getAllUsers', requireAdmin, getAllUsers)
 
 
 
